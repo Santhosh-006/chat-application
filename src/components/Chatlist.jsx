@@ -29,7 +29,7 @@ const Chatlist = () => {
             </div>
           </div>
         </div>
-        <hr className="border-t-2 border-gray-300 my-0.5" />
+        <hr className="border-t-2 border-gray-200 my-0.5" />
         <div className="p-1 my-1">
           <div className="flex items-center">
             <div className="bg-amber-700 rounded-full p-3 m-1">
@@ -42,7 +42,7 @@ const Chatlist = () => {
             </div>
           </div>
         </div>
-        <hr className="border-t-2 border-gray-300 my-0.5" />
+        <hr className="border-t-2 border-gray-200 my-0.5" />
         <div className="p-2 my-2">
           <div className="flex items-center">
             <div className="bg-purple-700 rounded-full p-3 m-1">
@@ -55,7 +55,7 @@ const Chatlist = () => {
             </div>
           </div>
         </div>
-        <hr className="border-t-2 border-gray-300 my-0.5" />
+        <hr className="border-t-2 border-gray-200 my-0.5" />
         <div className="p-2 my-2">
           <div className="flex items-center">
             <div className="bg-green-700 rounded-full p-3 m-1">
@@ -68,7 +68,7 @@ const Chatlist = () => {
             </div>
           </div>
         </div>
-        <hr className="border-t-2 border-gray-300 my-0.5" />
+        <hr className="border-t-2 border-gray-200 my-0.5" />
         <div className="p-2 my-2">
           <div className="flex items-center">
             <div className="bg-red-700 rounded-full p-3 m-1">
@@ -81,7 +81,7 @@ const Chatlist = () => {
             </div>
           </div>
         </div>
-        <hr className="border-t-2 border-gray-300 my-0.5" />
+        <hr className="border-t-2 border-gray-200 my-0.5" />
       </div>
     </div>
   );

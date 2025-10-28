@@ -6,15 +6,15 @@ const UserInfo = () => {
   return (
     <div className="flex justify-between items-center m-1 p-2">
       <div className="flex items-center">
-        <div className="bg-blue-700 rounded-full p-1.5 m-1">
+        <div className="bg-blue-700 rounded-full p-1.5 m-1 ">
           <FaRegUser className="text-white text-lg" />
         </div>
 
-        <p className="m-1 mx-1 text-sm">JohnDoe</p>
+        <p className="m-1 mx-1 text-lg font-bold">JohnDoe</p>
       </div>
       <div className="flex items-center">
-        <p className="m-1 mx-1.5">...</p>
-        <CiEdit className="m-1 mx-1" />
+        <p className="m-1 mx-1.5 text-2xl">...</p>
+        <CiEdit className="m-1 mx-1 text-2xl" />
       </div>
     </div>
   );
