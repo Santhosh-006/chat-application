@@ -1,11 +1,23 @@
-import {} from "react";
+import { useEffect } from "react";
 import List from "./components/List";
 import Chat from "./components/Chat";
 import Detail from "./components/Detail";
 import Login from "./components/Login";
+import Notification from "./components/Notification";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./lib/firebase";
 
 function App() {
   const user = false;
+
+  useEffect(() => {
+    const unSub = onAuthStateChanged(auth, (user) => {
+      console.log(user);
+    });
+    return () => {
+      unSub();
+    };
+  }, []);
   return (
     <>
       {user ? (
@@ -19,6 +31,7 @@ function App() {
           <Login />
         </div>
       )}
+      <Notification />
     </>
   );
 }

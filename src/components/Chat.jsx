@@ -6,6 +6,7 @@ import {
   FaInfoCircle,
   FaImage,
 } from "react-icons/fa";
+import AddUser from "./AddUser";
 import { IoSend } from "react-icons/io5";
 import { MdEmojiEmotions } from "react-icons/md";
 import EmojiPicker from "emoji-picker-react";
@@ -143,6 +144,7 @@ const Chat = () => {
           </button>
         </div>
       </div>
+      <AddUser />
     </div>
   );
 };
