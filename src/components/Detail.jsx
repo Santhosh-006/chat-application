@@ -1,3 +1,4 @@
+import { auth } from "../lib/firebase";
 import React from "react";
 import { FaRegUser } from "react-icons/fa";
 
@@ -12,8 +13,14 @@ const Detail = () => {
         <p className=" text-gray-700 text-xl ">About me....</p>
       </div>
       <div className="flex-1">Shared Images</div>
-      <button className="w-1/3 mx-auto m-3 bg-red-600 rounded-xl p-3 text-white font-bold">
+      <button className="w-1/3 mx-auto m-3 bg-red-600 rounded-xl p-3 text-white font-bold cursor-pointer">
         Block
+      </button>
+      <button
+        className="w-1/3 mx-auto m-3 bg-blue-600 rounded-xl p-3 text-white font-bold cursor-pointer"
+        onClick={() => auth.signOut()}
+      >
+        Log-Out
       </button>
     </div>
   );

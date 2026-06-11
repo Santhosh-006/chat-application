@@ -6,21 +6,35 @@ import Login from "./components/Login";
 import Notification from "./components/Notification";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./lib/firebase";
+import { useUserStore } from "./lib/userStore";
 
 function App() {
-  const user = false;
+  const { currentUser, isLoading, fetchUserInfo } = useUserStore();
 
   useEffect(() => {
     const unSub = onAuthStateChanged(auth, (user) => {
-      console.log(user);
+      const unSub = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          fetchUserInfo(user.uid);
+        } else {
+          fetchUserInfo(null);
+        }
+      });
     });
     return () => {
       unSub();
     };
-  }, []);
+  }, [fetchUserInfo]);
+
+  console.log(currentUser);
+
+  if (isLoading) {
+    return <div>Loading</div>;
+  }
+
   return (
     <>
-      {user ? (
+      {currentUser ? (
         <div className="flex justify-between m-5 rounded shadow  h-[95vh]">
           <List />
           <Chat />

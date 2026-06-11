@@ -10,10 +10,13 @@ import AddUser from "./AddUser";
 import { IoSend } from "react-icons/io5";
 import { MdEmojiEmotions } from "react-icons/md";
 import EmojiPicker from "emoji-picker-react";
+import { doc, onSnapshot } from "firebase/firestore";
+import { db } from "../lib/firebase";
 
 const Chat = () => {
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
+  const [chat, setChat] = useState();
 
   const handleEmoji = (e) => {
     setText((prev) => prev + e.emoji);
@@ -24,6 +27,21 @@ const Chat = () => {
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, []);
+
+  useEffect(() => {
+    const unSub = onSnapshot(
+      doc(db, "chats", "4ZaXTqnrKwIy2JFzDHhl"),
+      (res) => {
+        setChat(res.data());
+      },
+    );
+
+    return () => {
+      unSub();
+    };
+  }, []);
+
+  console.log(chat);
 
   return (
     <div className="flex-2  flex flex-col border-r border-gray-200">
@@ -144,7 +162,7 @@ const Chat = () => {
           </button>
         </div>
       </div>
-      <AddUser />
+      {/* <AddUser /> */}
     </div>
   );
 };
